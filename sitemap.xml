@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://horse-uk.sk/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://horse-uk.sk/sluzby/</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://horse-uk.sk/tim/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://horse-uk.sk/objednat/</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://horse-uk.sk/pravne/ochrana-sukromia/</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://horse-uk.sk/pravne/osobne-udaje/</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://horse-uk.sk/pravne/cookies/</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://horse-uk.sk/pravne/obchodne-podmienky/</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://horse-uk.sk/pravne/podmienky-rezervacie/</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://horse-uk.sk/pravne/zrusenie-zmena/</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://horse-uk.sk/pravne/udaje-spolocnosti/</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+</urlset>

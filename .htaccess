@@ -1,0 +1,13 @@
+# Horse.uk s.r.o. — FORPSI / Apache hints (future PHP deploy)
+Options -Indexes
+DirectoryIndex index.html index.php
+
+# Prefer HTTPS when certificates are ready
+# RewriteEngine On
+# RewriteCond %{HTTPS} off
+# RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Protect admin write endpoints once PHP exists (example)
+# <FilesMatch "\.(env|sql|log)$">
+#   Require all denied
+# </FilesMatch>
