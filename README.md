@@ -61,6 +61,10 @@ Odporúčaná cesta: zachovať HTML štruktúru a postupne nahradiť obsah PHP p
 - `robots.txt` (admin `Disallow`)
 - `sitemap.xml` stub (doména `https://horse-uk.sk` — upravte podľa finálnej domény)
 
+## Obsah a fotografie
+
+Verejné stránky majú slovenské texty o starostlivosti o zdravie koní (bez cien, falošných licencií, recenzií a medicínskych garancií). Fotografie sú v `assets/img/photos/`. Tím obsahuje iba role a neutrálne popisy — bez vymyslených mien.
+
 ## Poznámky k dizajnu
 
 Moderný minimal premium: biela, dark navy, grafit, svetlá sivá, champagne akcent. Brand-first full-bleed hero, bez card clutteru v hero, 2–3 zámerné motion (hero rise-in, scroll reveal, cookie banner).

@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Objednať sa — Horse.uk s.r.o.</title>
   <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
-  <meta name="description" content="Rezervačný formulár Horse.uk s.r.o. — klientská validácia a potvrdenie (maketu bez backendu).">
+  <meta name="description" content="Objednajte sa do Horse.uk s.r.o. — rezervácia termínu starostlivosti o zdravie vášho koňa.">
   <meta name="robots" content="index,follow">
   <link rel="canonical" href="https://horse-uk.sk/objednat/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -37,11 +37,15 @@
     </header>
 
     <main id="main">
-      <header class="page-hero">
+      <header class="page-hero has-photo">
+        <div class="page-hero-media" aria-hidden="true">
+          <img src="../assets/img/photos/booking-space.jpg" alt="" width="1920" height="1080">
+        </div>
+        <div class="page-hero-overlay" aria-hidden="true"></div>
         <div class="container">
           <p class="section-label">Rezervácia</p>
           <h1>Objednať sa</h1>
-          <p>Formulár je interaktívny maketu: validácia na strane klienta a UI potvrdenia. Termíny z admin kalendára ešte nie sú napojené.</p>
+          <p>Pošlite nám preferovaný termín a službu. Ozveme sa s potvrdením alebo návrhom iného času. Voľné sloty budú neskôr spravované z administrácie.</p>
         </div>
       </header>
 
@@ -50,24 +54,24 @@
           <div class="form-shell reveal">
             <div id="booking-success" class="form-success" tabindex="-1" role="status">
               <h3>Ďakujeme</h3>
-              <p>Vaša požiadavka bola pripravená na odoslanie. V produkcii ju spracuje backend (FORPSI). Toto je iba ukážka úspešného stavu.</p>
+              <p>Vaša požiadavka je pripravená. V produkcii ju spracuje backend a ozveme sa vám. Toto je ukážka úspešného odoslania vo vizuálnom maketu.</p>
               <button type="button" class="btn btn-primary" id="booking-reset">Nová požiadavka</button>
             </div>
 
             <form id="booking-form" novalidate>
               <div class="form-notice">
-                Voľné termíny budú načítané z administrácie. Teraz vyberáte preferovaný dátum a čas — bez falošnej dostupnosti.
+                Vyberáte preferovaný dátum a čas. Potvrdená dostupnosť príde z administrácie — zatiaľ nejde o rezervovaný kalendár.
               </div>
 
               <div class="form-group">
                 <label for="service">Služba</label>
                 <select class="form-control" id="service" name="service" required>
                   <option value="">— Vyberte službu —</option>
-                  <option value="ukazkova-a">Ukážková služba A (vzorka)</option>
-                  <option value="ukazkova-b">Ukážková služba B (vzorka)</option>
-                  <option value="ukazkova-c">Ukážková služba C (vzorka)</option>
-                  <option value="ukazkova-d">Ukážková služba D (vzorka)</option>
-                  <option value="ina">Iná / konzultácia — doplní spoločnosť</option>
+                  <option value="vet-pomoc">Veterinárna pomoc</option>
+                  <option value="vysetrenia">Vyšetrenia a konzultácie</option>
+                  <option value="prevencia">Preventívna starostlivosť</option>
+                  <option value="podpora">Podpora majiteľov</option>
+                  <option value="organizacia">Organizácia starostlivosti</option>
                 </select>
                 <span class="field-error" role="alert"></span>
               </div>
@@ -117,13 +121,13 @@
 
               <div class="form-group">
                 <label for="note">Poznámka <span style="font-weight:400;text-transform:none;letter-spacing:0">(voliteľné)</span></label>
-                <textarea class="form-control" id="note" name="note" rows="3" placeholder="Napr. meno koňa, špecifické požiadavky…"></textarea>
+                <textarea class="form-control" id="note" name="note" rows="3" placeholder="Napr. meno koňa, stručný popis situácie…"></textarea>
               </div>
 
               <p style="font-size:0.85rem;color:var(--graphite-soft);margin-bottom:1.25rem;">
                 Odoslaním súhlasíte s <a href="../pravne/podmienky-rezervacie/" style="color:var(--navy);text-decoration:underline;">podmienkami rezervácie</a>
                 a spracovaním údajov podľa <a href="../pravne/osobne-udaje/" style="color:var(--navy);text-decoration:underline;">zásad osobných údajov</a>
-                (texty doplní právnik).
+                (finálne texty doplní právnik).
               </p>
 
               <button type="submit" class="btn btn-primary">Odoslať požiadavku</button>
@@ -141,7 +145,7 @@
               <span class="logo-mark">Horse<span>.uk</span></span>
               <span class="logo-sub">s.r.o.</span>
             </div>
-            <p>Maketu rezervácie — bez zápisu do databázy.</p>
+            <p>Rezervácia starostlivosti o zdravie vášho koňa.</p>
           </div>
           <div class="footer-col">
             <h4>Navigácia</h4>
@@ -166,7 +170,7 @@
           </div>
         </div>
         <div class="footer-bottom">
-          <span>© Horse.uk s.r.o. — maketu</span>
+          <span>© Horse.uk s.r.o.</span>
           <span>SK · pripravené na RU / EN</span>
         </div>
       </div>
