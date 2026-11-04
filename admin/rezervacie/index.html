@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rezervácie — Admin | Horse.uk s.r.o.</title>
+  <link rel="icon" href="../../assets/img/favicon.svg" type="image/svg+xml">
+  <meta name="description" content="Admin shell Horse.uk s.r.o. — Rezervácie">
+  <meta name="robots" content="noindex,nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/css/main.css">
+</head>
+<body class="admin-body">
+  <div class="admin-shell">
+    <aside class="admin-sidebar">
+      <div>
+        <div class="logo-mark">Horse<span style="color:var(--champagne-soft)">.uk</span></div>
+        <div class="logo-sub">Admin maketu</div>
+      </div>
+      <nav class="admin-nav" aria-label="Admin">
+        <a href="../dashboard.html">Dashboard</a>
+        <a href="../sluzby/">Služby</a>
+        <a href="../tim/">Tím</a>
+        <a href="../rezervacie/" aria-current="page">Rezervácie</a>
+        <a href="../media/">Médiá</a>
+        <a href="../texty/">Texty stránok</a>
+        <a href="../kontakty/">Kontakty</a>
+        <a href="../statistiky/">Štatistiky</a>
+        <a href="../role/">Role</a>
+      </nav>
+      <div style="margin-top:auto;padding:0.65rem">
+        <a href="../index.html" style="font-size:0.85rem;color:rgba(255,255,255,.45)">Odhlásiť (shell)</a>
+        <div style="margin-top:0.75rem"><a href="../../" style="font-size:0.8rem;color:rgba(255,255,255,.35)">← Verejný web</a></div>
+      </div>
+    </aside>
+    <div class="admin-main">
+      <div class="admin-topbar">
+        <h1>Rezervácie</h1>
+        <span class="admin-badge">Maketu · bez API</span>
+      </div>
+
+      <div class="admin-panel">
+        <h2>Požiadavky na termín</h2>
+        <p>Zoznam bude napojený na databázu. Zatiaľ prázdny shell bez falošných rezervácií.</p>
+        <table class="admin-table">
+          <thead><tr><th>Dátum</th><th>Klient</th><th>Služba</th><th>Stav</th></tr></thead>
+          <tbody>
+            <tr><td colspan="4" class="ph">Žiadne rezervácie — čaká sa na backend a reálne odoslania.</td></tr>
+          </tbody>
+        </table>
+        <p class="admin-note">Kalendár dostupnosti a potvrdenia termínov — budúci FORPSI modul.</p>
+      </div>
+
+    </div>
+  </div>
+  <script src="../../assets/js/site.js"></script>
+</body>
+</html>

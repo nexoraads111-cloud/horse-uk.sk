@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Objednať sa — Horse.uk s.r.o.</title>
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <meta name="description" content="Rezervačný formulár Horse.uk s.r.o. — klientská validácia a potvrdenie (maketu bez backendu).">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://horse-uk.sk/objednat/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Preskočiť na obsah</a>
+  <div class="site-wrap">
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="logo" href="../">
+          <span class="logo-mark">Horse<span>.uk</span></span>
+          <span class="logo-sub">s.r.o.</span>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+        <nav class="nav" id="site-nav" aria-label="Hlavná navigácia">
+          <a href="../">Domov</a>
+          <a href="../sluzby/">Služby</a>
+          <a href="../tim/">Tím</a>
+          <a href="./" aria-current="page">Objednať sa</a>
+          <a href="../#kontakt">Kontakt</a>
+          <a class="nav-cta" href="./">Rezervácia</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <header class="page-hero">
+        <div class="container">
+          <p class="section-label">Rezervácia</p>
+          <h1>Objednať sa</h1>
+          <p>Formulár je interaktívny maketu: validácia na strane klienta a UI potvrdenia. Termíny z admin kalendára ešte nie sú napojené.</p>
+        </div>
+      </header>
+
+      <section class="section">
+        <div class="container">
+          <div class="form-shell reveal">
+            <div id="booking-success" class="form-success" tabindex="-1" role="status">
+              <h3>Ďakujeme</h3>
+              <p>Vaša požiadavka bola pripravená na odoslanie. V produkcii ju spracuje backend (FORPSI). Toto je iba ukážka úspešného stavu.</p>
+              <button type="button" class="btn btn-primary" id="booking-reset">Nová požiadavka</button>
+            </div>
+
+            <form id="booking-form" novalidate>
+              <div class="form-notice">
+                Voľné termíny budú načítané z administrácie. Teraz vyberáte preferovaný dátum a čas — bez falošnej dostupnosti.
+              </div>
+
+              <div class="form-group">
+                <label for="service">Služba</label>
+                <select class="form-control" id="service" name="service" required>
+                  <option value="">— Vyberte službu —</option>
+                  <option value="ukazkova-a">Ukážková služba A (vzorka)</option>
+                  <option value="ukazkova-b">Ukážková služba B (vzorka)</option>
+                  <option value="ukazkova-c">Ukážková služba C (vzorka)</option>
+                  <option value="ukazkova-d">Ukážková služba D (vzorka)</option>
+                  <option value="ina">Iná / konzultácia — doplní spoločnosť</option>
+                </select>
+                <span class="field-error" role="alert"></span>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="date">Preferovaný dátum</label>
+                  <input class="form-control" type="date" id="date" name="date" required>
+                  <span class="hint">Kalendár dostupnosti príde z adminu.</span>
+                  <span class="field-error" role="alert"></span>
+                </div>
+                <div class="form-group">
+                  <label for="time">Preferovaný čas</label>
+                  <select class="form-control" id="time" name="time" required>
+                    <option value="">— Vyberte čas —</option>
+                    <option value="09:00">09:00 (preferencia)</option>
+                    <option value="10:00">10:00 (preferencia)</option>
+                    <option value="11:00">11:00 (preferencia)</option>
+                    <option value="13:00">13:00 (preferencia)</option>
+                    <option value="14:00">14:00 (preferencia)</option>
+                    <option value="15:00">15:00 (preferencia)</option>
+                    <option value="16:00">16:00 (preferencia)</option>
+                  </select>
+                  <span class="hint">Nie sú to potvrdené voľné sloty.</span>
+                  <span class="field-error" role="alert"></span>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="name">Meno a priezvisko</label>
+                <input class="form-control" type="text" id="name" name="name" autocomplete="name" required placeholder="Vaše meno">
+                <span class="field-error" role="alert"></span>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="phone">Telefón</label>
+                  <input class="form-control" type="tel" id="phone" name="phone" autocomplete="tel" required placeholder="+421 …">
+                  <span class="field-error" role="alert"></span>
+                </div>
+                <div class="form-group">
+                  <label for="email">E-mail</label>
+                  <input class="form-control" type="email" id="email" name="email" autocomplete="email" required placeholder="meno@email.sk">
+                  <span class="field-error" role="alert"></span>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="note">Poznámka <span style="font-weight:400;text-transform:none;letter-spacing:0">(voliteľné)</span></label>
+                <textarea class="form-control" id="note" name="note" rows="3" placeholder="Napr. meno koňa, špecifické požiadavky…"></textarea>
+              </div>
+
+              <p style="font-size:0.85rem;color:var(--graphite-soft);margin-bottom:1.25rem;">
+                Odoslaním súhlasíte s <a href="../pravne/podmienky-rezervacie/" style="color:var(--navy);text-decoration:underline;">podmienkami rezervácie</a>
+                a spracovaním údajov podľa <a href="../pravne/osobne-udaje/" style="color:var(--navy);text-decoration:underline;">zásad osobných údajov</a>
+                (texty doplní právnik).
+              </p>
+
+              <button type="submit" class="btn btn-primary">Odoslať požiadavku</button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <div class="logo">
+              <span class="logo-mark">Horse<span>.uk</span></span>
+              <span class="logo-sub">s.r.o.</span>
+            </div>
+            <p>Maketu rezervácie — bez zápisu do databázy.</p>
+          </div>
+          <div class="footer-col">
+            <h4>Navigácia</h4>
+            <ul>
+              <li><a href="../">Domov</a></li>
+              <li><a href="../sluzby/">Služby</a></li>
+              <li><a href="../tim/">Tím</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Rezervácie</h4>
+            <ul>
+              <li><a href="../pravne/podmienky-rezervacie/">Podmienky</a></li>
+              <li><a href="../pravne/zrusenie-zmena/">Zrušenie / zmena</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Kontakt</h4>
+            <ul>
+              <li><a href="../#kontakt">Kontakt</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>© Horse.uk s.r.o. — maketu</span>
+          <span>SK · pripravené na RU / EN</span>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <script src="../assets/js/site.js"></script>
+  <script>
+    (function () {
+      var params = new URLSearchParams(window.location.search);
+      var service = params.get("service");
+      var select = document.getElementById("service");
+      if (service && select) {
+        var opt = select.querySelector('option[value="' + CSS.escape(service) + '"]');
+        if (opt) select.value = service;
+      }
+      var date = document.getElementById("date");
+      if (date) {
+        var t = new Date();
+        t.setDate(t.getDate() + 1);
+        date.min = t.toISOString().slice(0, 10);
+      }
+    })();
+  </script>
+</body>
+</html>
