@@ -223,8 +223,28 @@
     });
   }
 
+  /**
+   * GitHub project Pages live under /<repo>/ (e.g. /horse-uk.sk/).
+   * Without a trailing slash, relative asset URLs resolve one level too high.
+   * Keep page-relative hrefs (no <base> tag — that breaks ../ links).
+   */
+  function ensureProjectPagesTrailingSlash() {
+    if (!/\.github\.io$/i.test(location.hostname)) return;
+    const path = location.pathname;
+    const last = path.split("/").pop() || "";
+    const looksLikeFile = /\.[a-z0-9]+$/i.test(last);
+    if (!path.endsWith("/") && !looksLikeFile) {
+      location.replace(path + "/" + location.search + location.hash);
+    }
+  }
+
+  ensureProjectPagesTrailingSlash();
+
   document.addEventListener("DOMContentLoaded", () => {
     root.setAttribute("data-locale", locale);
+    root.dataset.pagesBase = /\.github\.io$/i.test(location.hostname)
+      ? "/" + (location.pathname.split("/").filter(Boolean)[0] || "") + "/"
+      : "/";
     initHeader();
     initReveal();
     initCookies();

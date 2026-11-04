@@ -20,6 +20,18 @@ npx --yes serve -p 8080
 
 Otvorte [http://localhost:8080](http://localhost:8080).
 
+## GitHub Pages (náhľad)
+
+Cieľová URL projektu: [https://nexoraads111-cloud.github.io/horse-uk.sk/](https://nexoraads111-cloud.github.io/horse-uk.sk/)
+
+Zapnutie (vyžaduje admin práva na repo — Settings → Pages):
+
+1. **Source:** Deploy from a branch → Branch `main` → folder `/` (root), Save  
+   **alebo** Source: **GitHub Actions** (workflow `.github/workflows/pages.yml`).
+2. Počkajte na zelený deploy; potom otvorte URL vyššie.
+
+Odkazy v HTML sú relatívne (fungujú pod `/horse-uk.sk/`). `site.js` doplní trailing slash na project Pages, aby sa nerozbili assety.
+
 | Cesta | Stránka |
 |-------|---------|
 | `/` | Domov |
