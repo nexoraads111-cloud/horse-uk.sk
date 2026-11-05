@@ -54,26 +54,50 @@
 
 ```
 jarvis/
-  main.py           # точка входу
-  setup.bat         # встановлення
-  start.bat         # запуск
+  main.py                 # точка входу
+  setup.bat               # встановлення залежностей
+  start.bat               # запуск з Python (.venv)
+  build_exe.bat           # збірка Windows .exe (одна команда)
+  build_exe_console.bat   # debug .exe з консоллю
+  JarvisAssistant.spec    # конфіг PyInstaller
   requirements.txt
-  config/           # налаштування
-  core/             # Ollama, асистент, дії
-  voice/            # STT / TTS / VAD / wake word
-  automation/       # програми, файли, Cursor, безпека
-  vision/           # скрін + аналіз
-  ui/               # PySide6 інтерфейс
-  database/         # SQLite
-  packaging/        # нотатки для .exe
+  config/                 # налаштування + шляхи для frozen
+  core/                   # Ollama, асистент, дії
+  voice/                  # STT / TTS / VAD / wake word
+  automation/             # програми, файли, Cursor, безпека
+  vision/                 # скрін + аналіз
+  ui/                     # PySide6 інтерфейс
+  database/               # SQLite
+  packaging/              # verify, іконка, інструкції dist
   tests/
 ```
 
 Дані користувача: `%LOCALAPPDATA%\JarvisAssistant\` (`jarvis.db`, `screenshots`, `voices`, `logs`).
 
-## Збірка .exe
+## Збірка Windows `.exe`
 
-Див. [packaging/build_exe.md](packaging/build_exe.md). Для щоденної роботи рекомендується `start.bat`.
+**На Windows** (у теці `jarvis`) виконайте одну команду:
+
+```bat
+build_exe.bat
+```
+
+Готовий застосунок: `dist\JarvisAssistant\JarvisAssistant.exe`  
+(потрібно копіювати **всю теку** `dist\JarvisAssistant\`, не лише exe).
+
+### Що входить / що ні
+
+| Входить у збірку | Окремо на ПК користувача |
+|------------------|---------------------------|
+| Код JARVIS, PySide6, клієнтські бібліотеки | **Ollama** (обов’язково) — https://ollama.com |
+| | Моделі: `ollama pull llama3.2` (+ `llava`) |
+| | Whisper-ваги (завантажаться при першому мікрофоні) |
+| | Piper + український `.onnx` (опційно) |
+
+Ollama **навмисно не бандлиться** в exe: окремий сервіс, великі моделі, своє GPU/CPU-ядро. Це нормальна схема для локальних LLM-асистентів.
+
+Детальніше: [packaging/build_exe.md](packaging/build_exe.md).  
+Для щоденної розробки зручніше `start.bat` (без перезбірки exe).
 
 ## Тести (розробка)
 

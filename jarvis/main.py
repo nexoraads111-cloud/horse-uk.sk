@@ -8,8 +8,15 @@ import os
 import sys
 from pathlib import Path
 
-# Ensure package root is on sys.path when launched as script / from .bat
-ROOT = Path(__file__).resolve().parent
+# Ensure package root is on sys.path when launched as script / from .bat / frozen
+if getattr(sys, "frozen", False):
+    ROOT = Path(sys.executable).resolve().parent
+    # PyInstaller extracts pure-Python packages into _MEIPASS
+    meipass = getattr(sys, "_MEIPASS", None)
+    if meipass and meipass not in sys.path:
+        sys.path.insert(0, meipass)
+else:
+    ROOT = Path(__file__).resolve().parent
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 

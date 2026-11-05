@@ -9,7 +9,10 @@ from copy import deepcopy
 from pathlib import Path
 from typing import Any
 
-APP_DIR = Path(__file__).resolve().parent.parent
+from .paths import app_dir as _app_dir
+from .paths import resource_path as _resource_path
+
+APP_DIR = _app_dir()
 
 
 def _default_data_dir() -> Path:
@@ -20,7 +23,10 @@ def _default_data_dir() -> Path:
 
 
 DATA_DIR = Path(os.environ.get("JARVIS_DATA_DIR", str(_default_data_dir())))
-DEFAULTS_PATH = Path(__file__).with_name("defaults.json")
+DEFAULTS_PATH = _resource_path("config", "defaults.json")
+if not DEFAULTS_PATH.exists():
+    # Dev / package-local fallback
+    DEFAULTS_PATH = Path(__file__).with_name("defaults.json")
 
 
 def _load_defaults() -> dict[str, Any]:
