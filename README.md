@@ -68,3 +68,7 @@ Verejné stránky majú slovenské texty o starostlivosti o zdravie koní (bez c
 ## Poznámky k dizajnu
 
 Moderný minimal premium: biela, dark navy, grafit, svetlá sivá, champagne akcent. Brand-first full-bleed hero, bez card clutteru v hero, 2–3 zámerné motion (hero rise-in, scroll reveal, cookie banner).
+
+## JARVIS (локальний AI-асистент)
+
+Окремий Windows-додаток у теці [`jarvis/`](jarvis/): PySide6 + Ollama + Whisper + Piper. Інструкція українською: [`jarvis/README.md`](jarvis/README.md) (`setup.bat` → `start.bat`).

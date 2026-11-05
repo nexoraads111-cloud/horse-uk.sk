@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+dist/
+build/
+*.log
+.DS_Store
+# Keep JarvisAssistant.spec in git; ignore accidental alternate specs
+warn-*.txt
